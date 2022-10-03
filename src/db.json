@@ -1,0 +1,23 @@
+{
+    "movies":[
+        {
+            "id":1,
+            "title": "jurassic-park",
+            "img": "imagesource",
+            "reviews":[
+                {
+                    "id":1,
+                    "name":"janedoe",
+                    "review":"good",
+                    "stars":5
+                },
+                {
+                    "id":2,
+                    "name":"otherdoe",
+                    "review":"bad",
+                    "stars":2
+                }
+            ]
+        }
+    ]
+}
