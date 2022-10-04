@@ -8,8 +8,6 @@ import {useEffect, useState} from "react";
 function App() {
   const [movieList, setMovieList] = useState([])
 
-  // console.log(movieList)
-
   useEffect(() => {
     fetch("http://localhost:3001/movies")
     .then((res) => res.json())
@@ -22,7 +20,7 @@ function App() {
     <div className="App">
       <Header />
       <Search />
-      <HomeReview />
+      <HomeReview movieList={movieList}/>
     </div>
   );
 }

@@ -2,8 +2,8 @@
     "movies":[
         {
             "id":1,
-            "title": "jurassic-park",
-            "img": "imagesource",
+            "title": "Jurassic Park",
+            "img": "https://m.media-amazon.com/images/I/51dZZ4pl-kL._AC_.jpg",
             "reviews":[
                 {
                     "id":1,
