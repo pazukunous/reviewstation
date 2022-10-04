@@ -3,8 +3,11 @@ import './App.css';
 import Header from './Header';
 import Search from './Search';
 import HomeReview from './HomeReview';
+import ReviewPage from './ReviewPage';
 import {useEffect, useState} from "react";
 import AddReviewForm from './AddReviewForm';
+import { Route, Switch } from 'react-router-dom';
+
 
 function App() {
   const [movieList, setMovieList] = useState([])
@@ -18,11 +21,21 @@ function App() {
   },[]);
   
   return (
-    <div className="App">
-      <Header />
-      <Search />
-      <HomeReview movieList={movieList}/>
-      </div>
+
+      <Switch>
+      <Route path="/review/:id">
+        <ReviewPage />
+      </Route>
+      <Route exact path="/">
+        <div className='App'>
+        <Header />
+        <Search />
+        <HomeReview movieList={movieList}/>
+        </div>
+      </Route>
+      </Switch>
+    
+ 
   );
 }
 
