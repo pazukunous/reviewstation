@@ -1,9 +1,17 @@
 import React from "react";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Link
+} from 'react-router-dom';
 
 
 function SearchListItem({movieSuggestion}){
 
-    <li></li>
+    return (
+    <li>{movieSuggestion.title}</li>
+    )
 }
 
 export default SearchListItem;
