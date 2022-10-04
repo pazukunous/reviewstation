@@ -4,6 +4,7 @@ import Header from './Header';
 import Search from './Search';
 import HomeReview from './HomeReview';
 import {useEffect, useState} from "react";
+import AddReviewForm from './AddReviewForm';
 
 function App() {
   const [movieList, setMovieList] = useState([])
@@ -21,7 +22,7 @@ function App() {
       <Header />
       <Search />
       <HomeReview movieList={movieList}/>
-    </div>
+      </div>
   );
 }
 
