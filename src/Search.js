@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import SearchList from "./SearchList";
+import AddReviewForm from "./AddReviewForm";
 
 function Search(){
 
@@ -19,6 +20,7 @@ function Search(){
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=${event.target.value}`)
             .then(resource => resource.json())
             .then(movieSuggestions => (setSearchList(movieSuggestions)))
+            console.log(searchList)
     }
 
   
@@ -31,7 +33,7 @@ function Search(){
             onChange = {handleSearch}
             />
             <SearchList searchList = {searchList} />
-        </div>
+            </div>
 
     )
 }
