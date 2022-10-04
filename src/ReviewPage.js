@@ -1,8 +1,14 @@
 import React from "react";
+import {useParams} from "react-router-dom"
 
 function ReviewPage(){
+
+    const params = useParams()
+
+    console.log(params)
+
     return(
-        <h1>YO WHATS UP</h1>
+        <h1>Reviews for movie {params.id}</h1>
     )
 
     
