@@ -1,8 +1,22 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+import "./Header.css"
 
 function Header(){
     return(
-        <h1>REVIEW STATION</h1>
+        <div className="headerBar">
+        <h1 className="headerStation">Review STATION</h1>
+
+     
+        <NavLink
+        to="/"
+        exact
+        >
+        <button className="Home"> Home </button>
+        
+        </NavLink>
+        </div>
+
     )
 }
 
