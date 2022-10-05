@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import SearchList from "./SearchList";
 
-function Search(){
+function Search({setCurrMovie}){
 
     // sets state of movie search
     const[searchTerm, setSearchTerm] = useState("")
@@ -30,7 +30,7 @@ function Search(){
             value = {searchTerm}
             onChange = {handleSearch}
             />
-            <SearchList searchList = {searchList} />
+            <SearchList searchList = {searchList} setCurrMovie={setCurrMovie} />
         </div>
 
     )
