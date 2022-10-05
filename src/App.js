@@ -5,7 +5,9 @@ import Search from './Search';
 import HomeReview from './HomeReview';
 import ReviewPage from './ReviewPage';
 import {useEffect, useState} from "react";
+import AddReviewForm from './AddReviewForm';
 import { Route, Switch } from 'react-router-dom';
+
 
 function App() {
   const [movieList, setMovieList] = useState([])
@@ -19,6 +21,7 @@ function App() {
   },[]);
   
   return (
+
       <Switch>
       <Route path="/review/:id">
         <ReviewPage />
@@ -32,7 +35,7 @@ function App() {
       </Route>
       </Switch>
     
-  
+ 
   );
 }
 
