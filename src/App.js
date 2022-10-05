@@ -12,6 +12,8 @@ import { Route, Switch } from 'react-router-dom';
 function App() {
   const [movieList, setMovieList] = useState([])
 
+  const [currMovie, setCurrMovie] = useState("")
+
   useEffect(() => {
     fetch("http://localhost:3001/movies")
     .then((res) => res.json())
@@ -24,12 +26,12 @@ function App() {
 
       <Switch>
       <Route path="/review/:id">
-        <ReviewPage />
+        <ReviewPage currMovie={currMovie} movieData={movieList}/>
       </Route>
       <Route exact path="/">
         <div className='App'>
         <Header />
-        <Search />
+        <Search setCurrMovie={setCurrMovie}/>
         <HomeReview movieList={movieList}/>
         </div>
       </Route>

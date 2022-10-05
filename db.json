@@ -1,20 +1,20 @@
 {
     "movies":[
         {
-            "id":1,
+            "id":329,
             "title": "Jurassic Park",
             "img": "https://m.media-amazon.com/images/I/51dZZ4pl-kL._AC_.jpg",
             "reviews":[
                 {
                     "id":1,
                     "name":"janedoe",
-                    "review":"good",
+                    "review":"One of the great cinematic thrill rides, and a spectacle of special effects. Spielberg blends groundbreaking (for the time) CGI with old-fashioned practical designs to create such a mesmerizing experience. This is the monster of all monster movies, and living proof that Hollywood blockbusters don't have to be stupid.",
                     "stars":5
                 },
                 {
                     "id":2,
                     "name":"otherdoe",
-                    "review":"bad",
+                    "review":"i work at a movie theater and had to listen to this play for 6 hours the other day to advertise for jurassic world 3 so now im mad at it",
                     "stars":2
                 }
             ]
