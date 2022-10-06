@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 function AddReviewForm({currMovie, movieList}){
 
     //set state for new review entry
-    const [formInfo, setFormInfo] = useState([])
+    const [formInfo, setFormInfo] = useState({})
 
     // function to post new movie review to database
     function addMovieReview(e, formInfo){
@@ -20,14 +20,19 @@ function AddReviewForm({currMovie, movieList}){
             body: JSON.stringify(newInfo)
            }) 
            .then (response => response.json())
-           .then (json => setFormInfo(json))
-        
+           
+        setFormInfo({
+            name: '',
+            stars: 1,
+            review: ''
+    })
+        console.log(formInfo)
     }
 
     console.log(`currMovie is id ${currMovie.id}`)
 
     let movieExists = movieList.find((movie)=>{
-        console.log(movie.id)
+        // console.log(movie.id)
         return (movie.id===currMovie.id)
     })
 
@@ -64,7 +69,7 @@ function AddReviewForm({currMovie, movieList}){
                     id="stars" 
                     value = {formInfo.stars} 
                     onChange={e => setFormInfo({...formInfo, stars: parseInt(e.target.value)})}>
-                    <option value ="1">⭐</option> 
+                    <option value ='1'>⭐</option> 
                     <option value='2'>⭐⭐</option> 
                     <option value='3'>⭐⭐⭐</option> 
                     <option value='4'>⭐⭐⭐⭐</option> 
