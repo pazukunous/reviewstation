@@ -1,6 +1,7 @@
 .headerStation{
   display: flex;
-  background:yellow;
+  background-color: gold;
+  background-position-x: left;
   justify-content:space-between ;
   align-items: center;
 
@@ -9,7 +10,7 @@
 
 .Home{
   display:flex;
-  background-color: yellow;
+  background-color: gold;
   color:black;
   padding: 5px 15px;
   border-radius:  5px;

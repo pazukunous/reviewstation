@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import Header from "./Header";
 import Review from "./Review";
 import {useParams} from "react-router-dom";
+import "./ReviewPage.css"
 
 function ReviewPage({currMovie, movieData, setMovieData}){
 
@@ -54,8 +55,10 @@ function ReviewPage({currMovie, movieData, setMovieData}){
     return(
         <div>
             <Header/>
-            <h2>{currMovie.title} <span> ({currMovie["release_date"].slice(0,4)})</span></h2>
+            <h2 className ="title">{currMovie.title} <span> ({currMovie["release_date"].slice(0,4)})</span></h2>
+            <div className="imagereview">
             <img src={`https://image.tmdb.org/t/p/w500/${currMovie["poster_path"]}`} width="140" height="210"/>
+            </div>
             <div class="reviewButton">
                 <NavLink
                 to={`/add`}
@@ -70,6 +73,9 @@ function ReviewPage({currMovie, movieData, setMovieData}){
                     <Review id={review.id} review={review}/>
                 )})}
             </ul>
+            <div className="reviewContent">
+
+            </div>
         </div>
     )
 
