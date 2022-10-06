@@ -26,7 +26,7 @@ function App() {
 
       <Switch>
       <Route path="/review/:id">
-        <ReviewPage currMovie={currMovie} movieData={movieList}/>
+        <ReviewPage currMovie={currMovie} movieData={movieList} setMovieData={setMovieList}/>
       </Route>
       <Route exact path="/">
         <div className='App'>
@@ -34,6 +34,9 @@ function App() {
         <Search setCurrMovie={setCurrMovie}/>
         <HomeReview movieList={movieList}/>
         </div>
+      </Route>
+      <Route path="/add">
+        <AddReviewForm currMovie={currMovie} movieList={movieList}/>
       </Route>
       </Switch>
     

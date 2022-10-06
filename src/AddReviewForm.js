@@ -1,42 +1,59 @@
 import React, {useState} from "react";
+import Header from "./Header";
+import { NavLink } from "react-router-dom";
 
-function AddReviewForm(){
+function AddReviewForm({currMovie, movieList}){
 
     //set state for new review entry
-    const [review, setReview] = useState({})
+    const [formInfo, setFormInfo] = useState([])
 
     // function to post new movie review to database
-    function addMovieReview(){
-           fetch("http://localhost:3001/movies", {
-            method: 'POST',
+    function addMovieReview(e, formInfo){
+        console.log("submitted")
+        e.preventDefault()
+        newInfo = {reviews:[...movieExists.reviews, formInfo]}
+           fetch(`http://localhost:3001/movies/${currMovie.id}`, {
+            method: 'PATCH',
             headers: {
                 Accept: 'application/form-data', "Content-Type": 'application/json',
             },
-            body: JSON.stringify({review})
+            body: JSON.stringify(newInfo)
            }) 
            .then (response => response.json())
-           .then (json => setReview(json))
+           .then (json => setFormInfo(json))
 
     }
 
+    console.log(`currMovie is id ${currMovie.id}`)
+
+    let movieExists = movieList.find((movie)=>{
+        console.log(movie.id)
+        return (movie.id===currMovie.id)
+    })
+
+    console.log(movieList)
+    console.log(movieExists)
+    let newInfo = {reviews:[movieExists.reviews]}
+
     return (
         <div>
-            <h1>Write a new review for {'movie'}</h1>
-            <form onSubmit={addMovieReview}>
+            <Header/>
+            <h1>Write a new review for {currMovie.title} <span>({currMovie["release_date"].slice(0,4)})</span></h1>
+            <form onSubmit={(e) => {addMovieReview(e, formInfo)}}>
                 <label>
                     Your name
                     <input 
                     type="text"
-                    value= {review.name} 
-                    onChange={e => setReview({...review, name: e.target.value})}/> 
+                    value= {formInfo.name} 
+                    onChange={e => setFormInfo({...formInfo, name: e.target.value})}/> 
 
                 </label>
                 <label>
                     Your movie review
                     <input 
                     type ="text" 
-                    value= {review.review}
-                    onChange={e => setReview({...review, review: e.target.value})}/>
+                    value= {formInfo.review}
+                    onChange={e => setFormInfo({...formInfo, review: e.target.value})}/>
                 </label>
                 <label>
                     Your stars
@@ -45,9 +62,10 @@ function AddReviewForm(){
                     name="stars" 
                     min="0" 
                     max="5"
-                    value = {review.stars}
-                    onChange={e => setReview({...review, stars: e.target.value})}/> 
+                    value = {formInfo.stars}
+                    onChange={e => setFormInfo({...formInfo, stars: parseInt(e.target.value)})}/> 
                 </label>
+                <input onClick={()=>{console.log("updated flag")}} type="submit" text="Submit Form"/>
             </form>
         </div>
     )
