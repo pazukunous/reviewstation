@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import "./AddReviewForm.css"
 
 
-function AddReviewForm({currMovie, movieList}){
+function AddReviewForm({currMovie, movieList, setMovieList}){
 
     //set state for new review entry
     const [formInfo, setFormInfo] = useState({})
@@ -28,9 +28,22 @@ function AddReviewForm({currMovie, movieList}){
             stars: 1,
             review: ''
     })
-        console.log(formInfo)
+        refreshMovieList()
+        // resetForms()
     }
 
+    // function resetForms(){
+    //     newInfo = {}
+    //     setFormInfo = {}
+    // }
+
+    function refreshMovieList(){
+        fetch("http://localhost:3001/movies")
+    .then((res) => res.json())
+    .then((movieData) => {setMovieList(movieData)
+
+    })
+    }
     console.log(`currMovie is id ${currMovie.id}`)
 
     let movieExists = movieList.find((movie)=>{
@@ -50,27 +63,27 @@ function AddReviewForm({currMovie, movieList}){
 
             <div className=".form-container">
                 <form onSubmit={(e) => {addMovieReview(e, formInfo)}}>
-                <label>
-                    Your name 
+                <label className="nameLabel">Your Name</label>
+                    <div></div>
                     <input 
+                    className="nameInput"
                     type="text"
                     value= {formInfo.name} 
                     onChange={e => setFormInfo({...formInfo, name: e.target.value})}/> 
-                </label>
-                              
-                <label>
-                
-                    Your movie review
+                <br />
+                <label className="reviewLabel">Your movie review</label>
+                    <div></div>
                     <textarea 
+                    className="reviewInput"
                     rows="10"
                     type ="text" 
                     value= {formInfo.review}
                     onChange={e => setFormInfo({...formInfo, review: e.target.value})}/>
-                </label> 
-                
-                <label>
-                    Your stars
+                 <br />
+                <label className="starLabel">Your stars</label>
+                <div></div>
                     <select 
+                    className="starInput"
                     name="stars" 
                     id="stars" 
                     value = {formInfo.stars} 
@@ -81,7 +94,7 @@ function AddReviewForm({currMovie, movieList}){
                     <option value='4'>⭐⭐⭐⭐</option> 
                     <option value='5'>⭐⭐⭐⭐⭐</option> 
                     </select> 
-                </label>
+                    <div></div>
                 <input onClick={()=>{console.log("updated flag")}} type="submit" text="Submit Form"/>
             </form>
             </div>
