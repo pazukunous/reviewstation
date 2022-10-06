@@ -63,24 +63,27 @@ function AddReviewForm({currMovie, movieList, setMovieList}){
 
             <div id="formContainer">
                 <form onSubmit={(e) => {addMovieReview(e, formInfo)}}>
-                <label>
-                    Your name 
+                <label className="nameLabel">Your Name</label>
+                    <div></div>
                     <input 
+                    className="nameInput"
                     type="text"
                     value= {formInfo.name} 
                     onChange={e => setFormInfo({...formInfo, name: e.target.value})}/> 
-                </label><br />
-                <label>
-                    Your movie review
+                <br />
+                <label className="reviewLabel">Your movie review</label>
+                    <div></div>
                     <textarea 
+                    className="reviewInput"
                     rows="10"
                     type ="text" 
                     value= {formInfo.review}
                     onChange={e => setFormInfo({...formInfo, review: e.target.value})}/>
-                </label> <br />
-                <label>
-                    Your stars
+                 <br />
+                <label className="starLabel">Your stars</label>
+                <div></div>
                     <select 
+                    className="starInput"
                     name="stars" 
                     id="stars" 
                     value = {formInfo.stars} 
@@ -91,7 +94,7 @@ function AddReviewForm({currMovie, movieList, setMovieList}){
                     <option value='4'>⭐⭐⭐⭐</option> 
                     <option value='5'>⭐⭐⭐⭐⭐</option> 
                     </select> 
-                </label>
+                    <div></div>
                 <input onClick={()=>{console.log("updated flag")}} type="submit" text="Submit Form"/>
             </form>
             </div>
