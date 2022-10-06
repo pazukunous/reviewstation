@@ -6,12 +6,14 @@ function SearchList({searchList, setCurrMovie}){
     
     if(searchList.length !==0){
         return (
-            <ul>
-            {searchList.results.map((movieSuggestion) => (
-            <SearchListItem movieSuggestion={movieSuggestion} setCurrMovie={setCurrMovie} 
-            />
-            ))}
-            </ul>
+            <div id="searchlist">
+                <ul>
+                {searchList.results.map((movieSuggestion) => (
+                <SearchListItem movieSuggestion={movieSuggestion} setCurrMovie={setCurrMovie} 
+                />
+                ))}
+                </ul>
+            </div>
         )
     }
 
