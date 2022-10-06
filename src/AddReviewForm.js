@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import Header from "./Header";
 import { NavLink } from "react-router-dom";
+import "./AddReviewForm.css"
+
 
 function AddReviewForm({currMovie, movieList}){
 
@@ -43,16 +45,17 @@ function AddReviewForm({currMovie, movieList}){
     return (
         <div>
             <Header/>
+             
             <h1>Write a new review for {currMovie.title} <span>({currMovie["release_date"].slice(0,4)})</span></h1>
+
             <div id="formContainer">
                 <form onSubmit={(e) => {addMovieReview(e, formInfo)}}>
                 <label>
-                    Your name
+                    Your name 
                     <input 
                     type="text"
                     value= {formInfo.name} 
                     onChange={e => setFormInfo({...formInfo, name: e.target.value})}/> 
-
                 </label><br />
                 <label>
                     Your movie review

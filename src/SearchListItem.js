@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./SearchListitem.css"
 
 
 function SearchListItem({movieSuggestion, setCurrMovie}){
@@ -13,7 +14,7 @@ function SearchListItem({movieSuggestion, setCurrMovie}){
         to={`/review/${movieSuggestion.id}`}
         exact
         >
-    <li onClick={handleClick}>{movieSuggestion.title}</li>
+    <li className="listitem"onClick={handleClick}>{movieSuggestion.title}</li>
     </NavLink>
     )
     

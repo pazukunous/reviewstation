@@ -64,7 +64,7 @@ function ReviewPage({currMovie, movieData, setMovieData}){
                 to={`/add`}
                 exact
                 >
-                <button type="button">Add A Review</button>
+                <button className="reviewbutton"type="button">Add A Review</button>
                 </NavLink>
             </div>
             <ul>

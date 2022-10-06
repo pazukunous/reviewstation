@@ -1,26 +1,30 @@
 
 
 .homeReview{
-    padding: 40px;
+    padding: 50px;
     /*margin: 10px;*/
 }
 
 img{
    float: left;
    outline: 20px;
+   padding-right: 30px;
+   
 }
 
 .homeReviewContent{
+    
     text-align: left;
-    float: left;
     margin: 20px;
     color: white;
+    
 }
 
 h2{
-    padding-bottom: 10px;
+    padding-bottom: 30px;
 }
 
 .filmReview{
     font-style: italic;
+    padding-right: 50px;
 }
