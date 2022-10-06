@@ -7,7 +7,7 @@ import "./AddReviewForm.css"
 function AddReviewForm({currMovie, movieList}){
 
     //set state for new review entry
-    const [formInfo, setFormInfo] = useState([])
+    const [formInfo, setFormInfo] = useState({})
 
     // function to post new movie review to database
     function addMovieReview(e, formInfo){
@@ -22,14 +22,19 @@ function AddReviewForm({currMovie, movieList}){
             body: JSON.stringify(newInfo)
            }) 
            .then (response => response.json())
-           .then (json => setFormInfo(json))
-
+           
+        setFormInfo({
+            name: '',
+            stars: 1,
+            review: ''
+    })
+        console.log(formInfo)
     }
 
     console.log(`currMovie is id ${currMovie.id}`)
 
     let movieExists = movieList.find((movie)=>{
-        console.log(movie.id)
+        // console.log(movie.id)
         return (movie.id===currMovie.id)
     })
 
@@ -42,35 +47,41 @@ function AddReviewForm({currMovie, movieList}){
             <Header/>
              
             <h1>Write a new review for {currMovie.title} <span>({currMovie["release_date"].slice(0,4)})</span></h1>
-            <form onSubmit={(e) => {addMovieReview(e, formInfo)}}>
-                
+
+            <div id="formContainer">
+                <form onSubmit={(e) => {addMovieReview(e, formInfo)}}>
                 <label>
                     Your name 
                     <input 
                     type="text"
                     value= {formInfo.name} 
                     onChange={e => setFormInfo({...formInfo, name: e.target.value})}/> 
-                    
-                </label>
+                </label><br />
                 <label>
                     Your movie review
-                    <input 
+                    <textarea 
+                    rows="10"
                     type ="text" 
                     value= {formInfo.review}
                     onChange={e => setFormInfo({...formInfo, review: e.target.value})}/>
-                </label>
+                </label> <br />
                 <label>
                     Your stars
-                    <input type="range" 
-                    id="stars" 
+                    <select 
                     name="stars" 
-                    min="0" 
-                    max="5"
-                    value = {formInfo.stars}
-                    onChange={e => setFormInfo({...formInfo, stars: parseInt(e.target.value)})}/> 
+                    id="stars" 
+                    value = {formInfo.stars} 
+                    onChange={e => setFormInfo({...formInfo, stars: parseInt(e.target.value)})}>
+                    <option value ='1'>⭐</option> 
+                    <option value='2'>⭐⭐</option> 
+                    <option value='3'>⭐⭐⭐</option> 
+                    <option value='4'>⭐⭐⭐⭐</option> 
+                    <option value='5'>⭐⭐⭐⭐⭐</option> 
+                    </select> 
                 </label>
                 <input onClick={()=>{console.log("updated flag")}} type="submit" text="Submit Form"/>
             </form>
+            </div>
         </div>
     )
 }
