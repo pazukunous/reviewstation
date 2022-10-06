@@ -36,7 +36,7 @@ function App() {
         </div>
       </Route>
       <Route path="/add">
-        <AddReviewForm currMovie={currMovie} movieList={movieList}/>
+        <AddReviewForm currMovie={currMovie} movieList={movieList} setMovieList={setMovieList}/>
       </Route>
       </Switch>
     
