@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import "./AddReviewForm.css"
 
 
-function AddReviewForm({currMovie, movieList}){
+function AddReviewForm({currMovie, movieList, setMovieList}){
 
     //set state for new review entry
     const [formInfo, setFormInfo] = useState({})
@@ -28,9 +28,22 @@ function AddReviewForm({currMovie, movieList}){
             stars: 1,
             review: ''
     })
-        console.log(formInfo)
+        refreshMovieList()
+        // resetForms()
     }
 
+    // function resetForms(){
+    //     newInfo = {}
+    //     setFormInfo = {}
+    // }
+
+    function refreshMovieList(){
+        fetch("http://localhost:3001/movies")
+    .then((res) => res.json())
+    .then((movieData) => {setMovieList(movieData)
+
+    })
+    }
     console.log(`currMovie is id ${currMovie.id}`)
 
     let movieExists = movieList.find((movie)=>{
