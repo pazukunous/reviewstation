@@ -61,7 +61,7 @@ function AddReviewForm({currMovie, movieList, setMovieList}){
              
             <h1>Write a new review for {currMovie.title} <span>({currMovie["release_date"].slice(0,4)})</span></h1>
 
-            <div id="formContainer">
+            <div className=".form-container">
                 <form onSubmit={(e) => {addMovieReview(e, formInfo)}}>
                 <label className="nameLabel">Your Name</label>
                     <div></div>

@@ -1,3 +1,37 @@
+# ReviewStation
+
+by  Justin Saborough, Chris Mann, and Mustafa Rizvi
+
+
+## Description
+
+ReviewStation is a website for making and displaying users' movie reviews.
+
+## Usage
+
+To find a movie, either to see its current user reviews or add a new one, start typing in the search form. You will see a list of title suggestions. Click on one and it will take you to a page that has the existing reviews for that movie, and a button to add a new review. Click on the button and it will take you to a form to enter your name, review, and assign a star score. Fill it out, and your review will be added to the database for that movie.
+
+## Known issues
+
+- Refreshing the page on the add new review form results in a blank screen 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
