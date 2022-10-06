@@ -1,5 +1,6 @@
 import React from "react";
 
+
 function genStars(stars){
     let starCount = "";
     for (let i=0; i<stars; i++){
@@ -19,6 +20,7 @@ function Review({review}){
                 <h3>{review.name}</h3>
                 <p className="review">{review.review}</p>
             </div>
+            
         </div>
     )
 }

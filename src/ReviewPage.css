@@ -1,0 +1,28 @@
+ .imagereview{
+ grid-row: 1;
+ grid-column: 1 / span 2;
+
+
+display: grid;
+align-items: center;
+justify-items: center;
+
+
+ }
+ .title{
+  grid-row: 1;
+  grid-column: 1 / span 2;
+ 
+ 
+ display: grid;
+ align-items: center;
+ justify-items: center;
+ color: white;
+ 
+
+ }
+
+ .reviewContent {
+  font-style: italic;
+  color: white;
+ }
