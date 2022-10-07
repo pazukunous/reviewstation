@@ -33,6 +33,7 @@ function App() {
         <Header />
         <Search setCurrMovie={setCurrMovie}/>
         <HomeReview movieList={movieList}/>
+        <HomeReview movieList={movieList}/>
         </div>
       </Route>
       <Route path="/add">
