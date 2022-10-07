@@ -29,13 +29,13 @@ function AddReviewForm({currMovie, movieList, setMovieList}){
             review: ''
     })
         refreshMovieList()
-        // resetForms()
+        resetForms()
     }
 
-    // function resetForms(){
-    //     newInfo = {}
-    //     setFormInfo = {}
-    // }
+    function resetForms(){
+        newInfo = {}
+        setFormInfo({})
+    }
 
     function refreshMovieList(){
         fetch("http://localhost:3001/movies")
@@ -51,8 +51,8 @@ function AddReviewForm({currMovie, movieList, setMovieList}){
         return (movie.id===currMovie.id)
     })
 
-    console.log(movieList)
-    console.log(movieExists)
+    // console.log(movieList)
+    // console.log(movieExists)
     let newInfo = {reviews:[movieExists.reviews]}
 
     return (

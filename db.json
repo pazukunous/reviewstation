@@ -7,15 +7,105 @@
       "reviews": [
         {
           "id": 1,
-          "name": "janedoe",
+          "name": "Jane Doe",
           "review": "One of the great cinematic thrill rides, and a spectacle of special effects. Spielberg blends groundbreaking (for the time) CGI with old-fashioned practical designs to create such a mesmerizing experience. This is the monster of all monster movies, and living proof that Hollywood blockbusters don't have to be stupid.",
           "stars": 5
         },
         {
           "id": 2,
-          "name": "otherdoe",
+          "name": "Janice Doe",
           "review": "i work at a movie theater and had to listen to this play for 6 hours the other day to advertise for jurassic world 3 so now im mad at it",
           "stars": 2
+        }
+      ]
+    },
+    {
+      "id": 862,
+      "title": "Toy Story",
+      "img": "https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg",
+      "reviews": [
+        {
+          "review": "the most relatable part of this movie is when buzz becomes self-aware, has an existential crisis and sinks into depression\n\n",
+          "name": "Patrick Willems",
+          "stars": 4
+        },
+        {
+          "name": "Andy Levy",
+          "stars": 5,
+          "review": "bone-chillingly terrifying horror movie about a bunch of toys that come alive and terrorize a young boy named sid\n\n"
+        },
+        {
+          "name": "24framesofnick",
+          "stars": 3,
+          "review": "Not as good as 2"
+        }
+      ]
+    },
+    {
+      "id": 10625,
+      "title": "Mean Girls",
+      "img": "https://image.tmdb.org/t/p/w500/2ZkuQXvVhh45uSvkBej4S7Ix1NJ.jpg",
+      "reviews": [
+        {
+          "name": "Olivia",
+          "stars": 4,
+          "review": "\"On October third, he asked me what day it was\""
+        },
+        {
+          "name": "Othavio",
+          "review": "rachel mcadams couldve done fight club but brad pitt couldnt have done mean girls",
+          "stars": 4
+        }
+      ]
+    },
+    {
+      "id": 128,
+      "title": "Princess Mononoke",
+      "img": "https://image.tmdb.org/t/p/w500/cMYCDADoLKLbB83g4WnJegaZimC.jpg",
+      "reviews": [
+        {
+          "name": "Jay",
+          "review": "call it what it is. treeson",
+          "stars": 4
+        },
+        {
+          "name": "D. Bolt",
+          "review": "why everyone tryna kill the deer god he just chillin",
+          "stars": 3
+        }
+      ]
+    },
+    {
+      "id": 429200,
+      "title": "Good Time",
+      "img": "https://image.tmdb.org/t/p/w500/s6DJXJU3HzX24Ij3VWg5MfVGHrI.jpg",
+      "reviews": [
+        {
+          "name": "Amaya",
+          "review": "when robert pattinson dyes his hair blond and runs around erratically he's a good actor but when i do it i'm \"hysterical\" and \"scaring the children\"",
+          "stars": 5
+        },
+        {
+          "name": "Jaylee",
+          "review": "Im literally out of breath from watching this",
+          "stars": 4
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "title": "Eternal Sunshine of the Spotless Mind",
+      "img": "https://image.tmdb.org/t/p/w500/5MwkWH9tYHv3mV9OdYTMR5qreIz.jpg",
+      "reviews": [
+        {
+          "name": "Roger Ebert",
+          "review": "Kaufman's mission seems to be the penetration of the human mind. His characters journeyed into the skull of John Malkovich, and there is a good possibility that two of them were inhabiting the same body in \"Adaptation.\" But both of those movies were about characters trying to achieve something outside themselves. The insight of \"Eternal Sunshine\" is that, at the end of the day, our memories are all we really have, and when they're gone, we're gone.",
+          "stars": 5
+        },
+        {
+          "name": "Houston Coley",
+          "review": "HOLY WOW THIS IS CINÉMA MAN",
+          "stars": 5
         }
       ]
     }
