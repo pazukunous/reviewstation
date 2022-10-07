@@ -11,8 +11,14 @@ function AddReviewForm({currMovie, movieList, setMovieList}){
 
     // function to post new movie review to database
     function addMovieReview(e, formInfo){
-        console.log("submitted")
         e.preventDefault()
+        console.log(e.target[2].value)
+        if (!e.target[0].value || !e.target[1].value){
+            alert("Please make sure to add a name, review, and star submission")
+            //console.log("test")
+        }
+        else{
+        console.log("submitted")
         newInfo = {reviews:[...movieExists.reviews, formInfo]}
            fetch(`http://localhost:3001/movies/${currMovie.id}`, {
             method: 'PATCH',
@@ -21,13 +27,13 @@ function AddReviewForm({currMovie, movieList, setMovieList}){
             },
             body: JSON.stringify(newInfo)
            }) 
-           .then (response => response.json())
+           .then (response => response.json())}
            
-        setFormInfo({
-            name: '',
-            stars: 1,
-            review: ''
-    })
+        // setFormInfo({
+        //     name: '',
+        //     stars: 1,
+        //     review: ''
+    // })
         refreshMovieList()
         resetForms()
     }

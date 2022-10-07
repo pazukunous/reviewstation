@@ -10,18 +10,33 @@ function genStars(stars){
     {
         starCount+="☆";
     }
-    console.log(starCount)
     return starCount;
 }
 
 function HomeReview({movieList}){
 
+    function reRoll()
+    {
+        console.log("rerolled")
+        const newInt = Math.floor(Math.random() * movieList.length)
+        return newInt;
+    }
+
     if (movieList.length){
-        const randMovie = Math.floor(Math.random() * movieList.length)
+        let randMovie = Math.floor(Math.random() * movieList.length)
+        // let randMovie = movieList[(movieList.length - 1)]
+        // console.log(randMovie)
+        // console.log(movieList[randMovie]?.reviews)
+        //console.log(movieList[randMovie]["reviews"])
+        while (movieList[randMovie]?.reviews === undefined)
+        {
+            reRoll()
+        }
         const randReview = Math.floor(Math.random() * (movieList[randMovie].reviews.length))
-        console.log(randMovie)
-        console.log(randReview)
-        console.log(movieList[randMovie])
+        console.log(movieList[randMovie].reviews)
+        if(movieList[randMovie].reviews.length === 0){
+            reRoll()
+        }
         return(
         <div className="homeReview">
                 <div className="homeReviewPoster">

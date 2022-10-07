@@ -13,7 +13,7 @@ function SearchList({searchList, setCurrMovie}){
             <div id="searchlist">
                 <ul style={myStyle}>
                 {searchList.results.map((movieSuggestion) => (
-                <SearchListItem movieSuggestion={movieSuggestion} setCurrMovie={setCurrMovie} 
+                <SearchListItem key="SLI" movieSuggestion={movieSuggestion} setCurrMovie={setCurrMovie} 
                 />
                 ))}
                 </ul>
