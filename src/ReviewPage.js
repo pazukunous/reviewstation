@@ -26,7 +26,7 @@ function ReviewPage({currMovie, movieData, setMovieData}){
         console.log("adding new movie data")
             const newMovieData = {
                 id:currMovie.id,
-                name:currMovie.title,
+                title:currMovie.title,
                 img:`https://image.tmdb.org/t/p/w500${currMovie["poster_path"]}`,
                 reviews:[]
             }

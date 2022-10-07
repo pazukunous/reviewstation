@@ -7,6 +7,9 @@ function genStars(stars){
         starCount += "★";
     }
     console.log(starCount)
+    while (starCount.length<5){
+        starCount+="☆";
+    }
     return starCount;
 }
 
