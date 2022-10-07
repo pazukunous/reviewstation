@@ -57,10 +57,10 @@ function AddReviewForm({currMovie, movieList, setMovieList}){
 
     return (
         <div>
-            <Header/>
+            <Header/> 
              
-            <h1>Write a new review for {currMovie.title} <span>({currMovie["release_date"].slice(0,4)})</span></h1>
-
+            <h1 className="reviewtitle"> Write a new review for {currMovie.title} <span>({currMovie["release_date"].slice(0,4)})</span></h1>
+            
             <div className=".form-container">
                 <form onSubmit={(e) => {addMovieReview(e, formInfo)}}>
                 <label className="nameLabel">Your Name</label>
@@ -95,7 +95,7 @@ function AddReviewForm({currMovie, movieList, setMovieList}){
                     <option value='5'>⭐⭐⭐⭐⭐</option> 
                     </select> 
                     <div></div>
-                <input onClick={()=>{console.log("updated flag")}} type="submit" text="Submit Form"/>
+                <input className="submit"onClick={()=>{console.log("updated flag")}} type="submit" text="Submit Form"/>
             </form>
             </div>
         </div>
