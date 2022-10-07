@@ -19,6 +19,7 @@ function HomeReview({movieList}){
     if (movieList.length){
         const randMovie = Math.floor(Math.random() * movieList.length)
         const randReview = Math.floor(Math.random() * (movieList[randMovie].reviews.length))
+        console.log(movieList)
         console.log(randMovie)
         console.log(randReview)
         console.log(movieList[randMovie])
