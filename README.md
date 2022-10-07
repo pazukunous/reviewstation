@@ -1,6 +1,6 @@
 # ReviewStation
 
-by  Justin Saborough, Chris Mann, and Mustafa Rizvi
+by  Justin Saborouh, Chris Mann, and Mustafa Rizvi
 
 
 ## Description
